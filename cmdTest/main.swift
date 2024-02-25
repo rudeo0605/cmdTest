@@ -6,16 +6,35 @@
 //
 
 //
-// 공배수
-// num이 n의 배수이면서 m의 배수이면 1 배수가 아니라면 0
+// 홀짝에 따라 다른 값 반환하기
+// n이 홀수라면 n이하의 홀수인 모든 양의 정수의 합
+// n이 짝수라면 n이하의 짝수인 모든 양의 정수의 제곱의 합
 //
 
 import Foundation
 
-func solution(_ number:Int, _ n:Int, _ m:Int) -> Int {
-    return number % n == 0 && number % m == 0 ? 1 : 0
+func solution(_ n:Int) -> Int {
+    
+    var result = 0;
+    
+    if(n % 2 == 0)
+    {
+        for cnt in 1...n where cnt % 2 == 0
+        {
+            result += cnt * cnt
+        }
+    }
+    else
+    {
+        for cnt in 1...n where cnt % 2 != 0
+        {
+            result += cnt
+        }
+    }
+    
+    return result
 }
 
-var result = solution(55,10,5)
+var result = solution(10)
 
 print(result)

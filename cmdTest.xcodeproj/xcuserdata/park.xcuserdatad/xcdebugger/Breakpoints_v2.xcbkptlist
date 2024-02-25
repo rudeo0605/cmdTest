@@ -3,4 +3,54 @@
    uuid = "51459615-74A2-4898-8EB5-BA8E3B7F7674"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D8E1972F-1B64-4918-A1C2-F1D1CB2039CB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "cmdTest/main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "solution(_:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "D8E1972F-1B64-4918-A1C2-F1D1CB2039CB - 6a25b31ac7b4e91c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cmdTest.solution(Swift.Int) -&gt; Swift.Int"
+                  moduleName = "cmdTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Transcend/cmdTest/cmdTest/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "840">
+               </Location>
+               <Location
+                  uuid = "D8E1972F-1B64-4918-A1C2-F1D1CB2039CB - 6a25b31ac7b4e91c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cmdTest.solution(Swift.Int) -&gt; Swift.Int"
+                  moduleName = "cmdTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Transcend/cmdTest/cmdTest/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "848">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
