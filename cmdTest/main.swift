@@ -6,27 +6,29 @@
 //
 
 //
-// 문자열 곱하기
-// str과 n이 주어질 때 문자열을 n번 만큼 반복해라
-// 1 <= arr <= 200
-// str은 영소문자로만 이루어져 있습니다.
-//
+// 더 크게 합치기
+// n1, n2 가 주어졌을때 n1 ⊕ n2 또는 n2 ⊕ n1 중 더 큰 수를 리턴해라
+// 1 <= arr <= 10,000
 //
 
 import Foundation
 
-func solution(_ my_string:String, _ k:Int) -> String {
+func solution(_ a:Int, _ b:Int) -> Int {
     
-    var result = ""
+    var value1 = 0;
+    var value2 = 0;
     
-    for idx in 0..<k
-    {
-        result += my_string
-    }
+    let temp1 = String(a) + String(b)
     
-    return result
+    value1 = Int(temp1)!
+    
+    let temp2 = String(b) + String(a)
+    
+    value2 = Int(temp2)!
+    
+    return value1 <= value2 ? value2 : value1
 }
 
-var result = solution("string", 3)
+var result = solution(9,91)
 
 print(result)
