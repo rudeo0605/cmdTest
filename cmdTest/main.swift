@@ -6,24 +6,36 @@
 //
 
 //
-// 카운트 업
-// startNum, endNum
-//
+// 콜라츠 수열 만들기
+// 짝수면 2로 나누고
+// 홀수면 3 * x + 1
 
 import Foundation
 
-func solution(_ start_num:Int, _ end_num:Int) -> [Int] {
+func solution(_ n:Int) -> [Int] {
     
+    var number = n
     var result : [Int] = []
     
-    for num in start_num...end_num
+    result.append(number)
+    
+    while(number != 1)
     {
-        result.append(num)
+        if(number % 2 == 0)
+        {
+            number = number / 2
+        }
+        else
+        {
+            number = 3 * number + 1
+        }
+        
+        result.append(number)
     }
     
     return result
 }
 
-var result = solution(3, 10)
+var result = solution(10)
 
 print(result)
