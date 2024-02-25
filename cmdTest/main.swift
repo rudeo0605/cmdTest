@@ -6,28 +6,39 @@
 //
 
 //
-// 마지막 두 원소
+// 수 조작하기 1
 //
 
 import Foundation
 
-func solution(_ num_list:[Int]) -> [Int] {
+func solution(_ n:Int, _ control:String) -> Int {
     
-    var lastIndex = num_list.count - 1
+    var sum = n;
     
-    var resultNum_list = num_list
-    
-    if(num_list[lastIndex] > num_list[lastIndex - 1])
+    for (_, cha) in control.enumerated()
     {
-        resultNum_list.append(num_list[lastIndex] - num_list[lastIndex - 1])
+        if(cha == "w")
+        {
+            sum += 1
+        }
+        else if(cha == "s")
+        {
+            sum -= 1
+        }
+        else if(cha == "d")
+        {
+            sum += 10
+        }
+        else if(cha == "a")
+        {
+            sum -= 10
+        }
+        
     }
-    else
-    {
-        resultNum_list.append(num_list[lastIndex]  * 2)
-    }
-
-    return resultNum_list
+    
+    return sum
 }
-var result = solution([2,1,6])
+
+var result = solution(0, "wsdawsdassw")
 
 print(result)
