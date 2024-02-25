@@ -6,36 +6,17 @@
 //
 
 //
-// 조건 문자열
-// 문자열에 따라 두 수의 크기 비교
-//
+// flag에 따라 다른 값 반환하기
+// flag가 true면 a + b
+// flag가 false면 a - b
 
 import Foundation
 
-func solution(_ ineq:String, _ eq:String, _ n:Int, _ m:Int) -> Int {
+func solution(_ a:Int, _ b:Int, _ flag:Bool) -> Int {
     
-    var result = 0;
-    
-    if(ineq == ">" && eq == "=")
-    {
-        result = n >= m ? 1 : 0
-    }
-    else if(ineq == "<" && eq == "=")
-    {
-        result = n <= m ? 1 : 0
-    }
-    else if(ineq == ">" && eq == "!")
-    {
-        result = n > m ? 1 : 0
-    }
-    else if(ineq == "<" && eq == "!")
-    {
-        result = n < m ? 1 : 0
-    }
-    
-    return result
+    return flag ? a + b : a - b
 }
 
-var result = solution("<", "=", 20, 50)
+var result = solution(-4, 7, true)
 
 print(result)
