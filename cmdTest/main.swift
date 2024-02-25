@@ -6,31 +6,28 @@
 //
 
 //
-// 이어 붙인 수
+// 마지막 두 원소
 //
 
 import Foundation
 
-func solution(_ num_list:[Int]) -> Int {
+func solution(_ num_list:[Int]) -> [Int] {
     
-    var a = ""
-    var b = ""
+    var lastIndex = num_list.count - 1
     
-    for num in num_list
+    var resultNum_list = num_list
+    
+    if(num_list[lastIndex] > num_list[lastIndex - 1])
     {
-        if(num % 2 == 0)
-        {
-            b += String(num)
-        }
-        else
-        {
-            a += String(num)
-        }
+        resultNum_list.append(num_list[lastIndex] - num_list[lastIndex - 1])
     }
-    
-    return (Int(a)! + Int(b)!)
-}
+    else
+    {
+        resultNum_list.append(num_list[lastIndex]  * 2)
+    }
 
-var result = solution([3, 4, 5, 2, 1])
+    return resultNum_list
+}
+var result = solution([2,1,6])
 
 print(result)
