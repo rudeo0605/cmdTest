@@ -3,4 +3,54 @@
    uuid = "51459615-74A2-4898-8EB5-BA8E3B7F7674"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1592CAC9-5FD0-40EB-80E5-B0A1BB55794F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "cmdTest/main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "solution(_:_:_:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "1592CAC9-5FD0-40EB-80E5-B0A1BB55794F - 77077c1330491250"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cmdTest.solution(Swift.Int, Swift.Int, Swift.Array&lt;Swift.Bool&gt;) -&gt; Swift.Int"
+                  moduleName = "cmdTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Transcend/cmdTest/cmdTest/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  uuid = "1592CAC9-5FD0-40EB-80E5-B0A1BB55794F - 77077c1330491250"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cmdTest.solution(Swift.Int, Swift.Int, Swift.Array&lt;Swift.Bool&gt;) -&gt; Swift.Int"
+                  moduleName = "cmdTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Transcend/cmdTest/cmdTest/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "332">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
