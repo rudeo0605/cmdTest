@@ -6,37 +6,46 @@
 //
 
 //
-// 수열과 구간 쿼리 4
-//
+// 배열 만들기 2
+// l 이상 r 이하 정수 중 숫자 0 과 5 로만 이루어진 모든 정수를 오름차순으로 만들기
+// 5의 배수만 확인
+// String으로 변환한 후 "5", "0" 개수 체크
+// String 길이와 비교하여 같으면 리스트에 추가
+// 리스트가 비어있으면 -1 추가
 
 import Foundation
 
-func solution(_ arr:[Int], _ queries:[[Int]]) -> [Int] {
+func solution(_ l:Int, _ r:Int) -> [Int] {
     
-    var result = arr
+    var result : [Int] = []
     
-    print(result)
-    for (_, query) in queries.enumerated()
+    for i in l...r
     {
-        let s = query[0]
-        let e = query[1]
-        let k = query[2]
-        
-        let newArr = Array(arr[s...e])
-        
-        for idx in s...e
+        if(i % 5 == 0)
         {
-            if(idx % k == 0)
+            var sum = 0;
+            
+            let tempString = String(i)
+            let tempStringLength = tempString.count
+            
+            sum += tempString.filter{$0 == "5"}.count
+            sum += tempString.filter{$0 == "0"}.count
+            
+            if(sum == tempStringLength)
             {
-                result[idx] = result[idx] + 1
+                result.append(i)
             }
         }
-        
-        print(result)
     }
+    
+    if(result.isEmpty)
+    {
+        result.append(-1)
+    }
+    
     return result
 }
 
-var result = solution([0, 1, 2, 4, 3], [[0, 4, 1],[0, 3, 2],[0, 3, 3]])
+var result = solution(5, 555)
 
 print(result)
