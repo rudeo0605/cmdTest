@@ -6,41 +6,26 @@
 //
 
 //
-// 주사위 게임 2
-// 주사위 3개 조건
-// 1. 모두 같은 경우
-// 2. 모두 다른 경우
-// 3. 2개만 같은 경우
+// 원소들의 곱과 합
+//
 
 import Foundation
 
-func solution(_ a:Int, _ b:Int, _ c:Int) -> Int {
+func solution(_ num_list:[Int]) -> Int {
     
-    let a1 = Double(a)
-    let b1 = Double(b)
-    let c1 = Double(c)
-    
-    var result:Int = 0
-    
-    if(a == b && a == c)
-    {
-        result = 
-        (a + b + c)
-        * Int( pow(a1, 2) + pow(b1, 2) + pow(c1, 2) )
-        * Int( pow(a1, 3) + pow(b1, 3) + pow(c1, 3) )
-    }
-    else if(a != b && a != c && b != c)
-    {
-        result = a + b + c
-    }
-    else
-    {
-        result = (a + b + c) * Int( pow(a1,2) + pow(b1, 2) + pow(c1, 2))
-    }
+    var sum1 = 0
+    var sum2 = 0
 
-    return result
+    // reduce를 사용하는 이유 - 속도
+    // for-in 을 사용하면 목록을 하나씩 반복해야함
+    // reduce를 사용하면 한번에 처리
+    //
+    sum1 = num_list.reduce(1, *)
+    sum2 = Int(pow(Double(num_list.reduce(0, +)), 2))
+    
+    return sum1 >= sum2 ? 0 : 1
 }
 
-var result = solution(5,3,3)
+var result = solution([3, 4, 5, 2, 1])
 
 print(result)
