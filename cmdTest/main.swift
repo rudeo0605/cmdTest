@@ -6,42 +6,18 @@
 //
 
 //
-// 배열 만들기 4
+// 간단한 논리 연산
 //
 
 
 import Foundation
 
-func solution(_ arr:[Int]) -> [Int] {
+func solution(_ x1:Bool, _ x2:Bool, _ x3:Bool, _ x4:Bool) -> Bool {
     
-    var result : [Int] = []
     
-    var index = 0
-    
-    while(index != arr.count)
-    {
-        if(result.isEmpty)
-        {
-            result.append(arr[index])
-            index += 1
-        }
-        else
-        {
-            if(arr[index] > result[result.count - 1])
-            {
-                result.append(arr[index])
-                index += 1
-            }
-            else
-            {
-                result.removeLast()
-            }
-        }
-    }
-    
-    return result
+    return (x1 || x2) && (x3 || x4)
 }
 
-var result = solution([1, 4, 2, 5, 3])
+var result = solution(false, true, true, true)
 
 print(result)
