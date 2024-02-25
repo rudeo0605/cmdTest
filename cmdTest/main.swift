@@ -6,39 +6,51 @@
 //
 
 //
-// 수 조작하기 1
+// 수 조작하기 2
+// 이전값 - 현재값을 해서 값을 구함
 //
 
 import Foundation
 
-func solution(_ n:Int, _ control:String) -> Int {
+func solution(_ numLog:[Int]) -> String {
     
-    var sum = n;
+    var previousNumber = 0
     
-    for (_, cha) in control.enumerated()
+    var result = ""
+    
+    for (idx, num) in numLog.enumerated()
     {
-        if(cha == "w")
+        if(idx == 0)
         {
-            sum += 1
+            previousNumber = num
         }
-        else if(cha == "s")
+        else
         {
-            sum -= 1
-        }
-        else if(cha == "d")
-        {
-            sum += 10
-        }
-        else if(cha == "a")
-        {
-            sum -= 10
+            let value = num - previousNumber
+            if(value == 1)
+            {
+                result += "w"
+            }
+            else if(value == -1)
+            {
+                result += "s"
+            }
+            else if(value == 10)
+            {
+                result += "d"
+            }
+            else if(value == -10)
+            {
+                result += "a"
+            }
+            
+            previousNumber = num
         }
         
     }
-    
-    return sum
+    return result
 }
 
-var result = solution(0, "wsdawsdassw")
+var result = solution([0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1])
 
 print(result)
