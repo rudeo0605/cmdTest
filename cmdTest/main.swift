@@ -6,35 +6,36 @@
 //
 
 //
-// 홀짝에 따라 다른 값 반환하기
-// n이 홀수라면 n이하의 홀수인 모든 양의 정수의 합
-// n이 짝수라면 n이하의 짝수인 모든 양의 정수의 제곱의 합
+// 조건 문자열
+// 문자열에 따라 두 수의 크기 비교
 //
 
 import Foundation
 
-func solution(_ n:Int) -> Int {
+func solution(_ ineq:String, _ eq:String, _ n:Int, _ m:Int) -> Int {
     
     var result = 0;
     
-    if(n % 2 == 0)
+    if(ineq == ">" && eq == "=")
     {
-        for cnt in 1...n where cnt % 2 == 0
-        {
-            result += cnt * cnt
-        }
+        result = n >= m ? 1 : 0
     }
-    else
+    else if(ineq == "<" && eq == "=")
     {
-        for cnt in 1...n where cnt % 2 != 0
-        {
-            result += cnt
-        }
+        result = n <= m ? 1 : 0
+    }
+    else if(ineq == ">" && eq == "!")
+    {
+        result = n > m ? 1 : 0
+    }
+    else if(ineq == "<" && eq == "!")
+    {
+        result = n < m ? 1 : 0
     }
     
     return result
 }
 
-var result = solution(10)
+var result = solution("<", "=", 20, 50)
 
 print(result)
