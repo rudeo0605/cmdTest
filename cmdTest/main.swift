@@ -6,8 +6,8 @@
 //
 
 //
-// 더 크게 합치기
-// n1, n2 가 주어졌을때 n1 ⊕ n2 또는 n2 ⊕ n1 중 더 큰 수를 리턴해라
+// 두 수의 연산값 비교하기
+// n1, n2 가 주어졌을때 n1 ⊕ n2 또는 2 * n1 * n2 중 더 큰 수를 리턴해라
 // 1 <= arr <= 10,000
 //
 
@@ -21,14 +21,12 @@ func solution(_ a:Int, _ b:Int) -> Int {
     let temp1 = String(a) + String(b)
     
     value1 = Int(temp1)!
-    
-    let temp2 = String(b) + String(a)
-    
-    value2 = Int(temp2)!
+
+    value2 = 2 * a * b
     
     return value1 <= value2 ? value2 : value1
 }
 
-var result = solution(9,91)
+var result = solution(91,2)
 
 print(result)
