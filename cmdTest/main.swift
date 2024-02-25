@@ -6,25 +6,27 @@
 //
 
 //
-// 문자열 리스트를 문자열로 변환하기
-// 배열에 담긴 문자를 순서대로 이어 붙여라
+// 문자열 곱하기
+// str과 n이 주어질 때 문자열을 n번 만큼 반복해라
 // 1 <= arr <= 200
-// arr의 원소는 전부 알파벳 소문자로 이루어진 길이가 1인 문자열
+// str은 영소문자로만 이루어져 있습니다.
 //
 //
 
 import Foundation
 
-func solution(_ arr:[String]) -> String {
+func solution(_ my_string:String, _ k:Int) -> String {
     
     var result = ""
-    for cha in arr
+    
+    for idx in 0..<k
     {
-        result += cha
+        result += my_string
     }
+    
     return result
 }
 
-var result = solution(["a","b","c"])
+var result = solution("string", 3)
 
 print(result)
