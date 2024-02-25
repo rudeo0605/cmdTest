@@ -6,36 +6,42 @@
 //
 
 //
-// 콜라츠 수열 만들기
-// 짝수면 2로 나누고
-// 홀수면 3 * x + 1
+// 배열 만들기 4
+//
+
 
 import Foundation
 
-func solution(_ n:Int) -> [Int] {
+func solution(_ arr:[Int]) -> [Int] {
     
-    var number = n
     var result : [Int] = []
     
-    result.append(number)
+    var index = 0
     
-    while(number != 1)
+    while(index != arr.count)
     {
-        if(number % 2 == 0)
+        if(result.isEmpty)
         {
-            number = number / 2
+            result.append(arr[index])
+            index += 1
         }
         else
         {
-            number = 3 * number + 1
+            if(arr[index] > result[result.count - 1])
+            {
+                result.append(arr[index])
+                index += 1
+            }
+            else
+            {
+                result.removeLast()
+            }
         }
-        
-        result.append(number)
     }
     
     return result
 }
 
-var result = solution(10)
+var result = solution([1, 4, 2, 5, 3])
 
 print(result)
