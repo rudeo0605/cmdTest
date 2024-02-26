@@ -6,21 +6,30 @@
 //
 
 //
-// 카운트 다운
-// for-in 문에서 역순으로 카운트를 하고 싶을 경우
-// stride 를 사용한다.
+// 2의 영역
+
 import Foundation
 
-func solution(_ start:Int, _ end_num:Int) -> [Int] {
+func solution(_ arr:[Int]) -> [Int] {
+    
+    let startIndex = arr.firstIndex(of:2)
+    let endIndex = arr.lastIndex(of:2)
+    
     var result : [Int] = []
     
-    for i in stride(from: start, to: end_num - 1, by: -1)
+    if(startIndex == nil || endIndex == nil)
     {
-        result.append(i)
+        result.append(-1)
+        return result
     }
+    
+    for idx in startIndex!...endIndex!
+    {
+        result.append(arr[idx])
+    }
+    
     return result
 }
-
-var result = solution(10, 3)
+var result = solution([1, 1, 1])
 
 print(result)
