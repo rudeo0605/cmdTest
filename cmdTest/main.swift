@@ -6,21 +6,20 @@
 //
 
 //
-// 짝수는 싫어요
+// 중앙값 구하기
 
 
 import Foundation
 
-func solution(_ n:Int) -> [Int] {
+func solution(_ array:[Int]) -> Int {
 
-    var result : [Int] = []
+    var sortedArray = array 
+    let centerIndex = array.count / 2
+
+    sortedArray.sort(by: <)
     
-    for idx in 1...n where idx % 2 == 1
-    {
-        result.append(idx)
-    }
-    return result
+    return sortedArray[centerIndex]
 }
-var result = solution(15)
+var result = solution([1, 2, 7, 10, 11])
 
 print(result)
