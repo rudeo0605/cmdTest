@@ -6,13 +6,13 @@
 //
 
 //
-// 소문자로 바꾸기
+// 문자열을 정수로 변환하기
 
 import Foundation
 
-func solution(_ myString:String) -> String {
-    return myString.lowercased()
+func solution(_ n_str:String) -> Int {
+    return Int(n_str)
 }
 
-var result = solution("aBcDeFg")
+var result = solution("10")!
 print(result)
