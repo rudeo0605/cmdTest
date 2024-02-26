@@ -6,20 +6,26 @@
 //
 
 //
-// 가위 바위 보
+// 배열 비교하기
 import Foundation
 
-func solution(_ rsp:String) -> String {
-    let dic : [Character:String] = ["2":"0", "0":"5", "5":"2"]
-    var result = ""
+func solution(_ arr1:[Int], _ arr2:[Int]) -> Int {
+    let aSize = arr1.count
+    let bSize = arr2.count
 
-    for cha in rsp
+    if(aSize == bSize)
     {
-        result += dic[cha]!
+        let ac = arr1.reduce(0,{ $0 + $1 })
+        let bc = arr2.reduce(0,{ $0 + $1 })
+        
+        return ac == bc ? 0 : ac > bc ? 1 : -1
     }
-    return result
+    else
+    {
+        return aSize > bSize ? 1 : -1
+    }
 }
 
-var result = solution("2")
+var result = solution([100, 17, 84, 1]	, [55, 12, 65, 36]	)
 
 print(result)
