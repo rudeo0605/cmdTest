@@ -6,25 +6,19 @@
 //
 
 //
-// n의 배수 고르기
+// rny_string
 
 import Foundation
 
-func solution(_ rny_string:String) -> String {
+func solution(_ num_list:[Int], _ n:Int) -> [Int] {
+    
+    let maxIndex = num_list.count - 1
 
-    let result : String = rny_string.reduce(into: "") { result, cha in
-        if(cha == "m")
-        {
-            result += "rn"
-        }
-        else
-        {
-            result += String(cha)
-        }
-    }
+    let result = Array(num_list[n - 1...maxIndex])
+
     return result
 }
 
-var result = solution("masterpiece")
+var result = solution([5, 2, 1, 7, 5], 2)
 
 print(result)
