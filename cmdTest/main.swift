@@ -6,16 +6,24 @@
 //
 
 //
-// 조건에 맞게 수열 변환하기 3
+// n보다 커질 때까지 더하기
 import Foundation
 
-func solution(_ arr:[Int], _ k:Int) -> [Int] {
+func solution(_ numbers:[Int], _ n:Int) -> Int {
 
-    let result = arr.map { k % 2 != 0 ? $0 * k : $0 + k}
+    var result = 0;
 
+    for number in numbers
+    {
+        if(result > n)
+        {
+            break;
+        }
+        result += number
+    }
     return result
 }
 
-var result = solution([1, 2, 3, 100, 99, 98], 3)
+var result = solution([34, 5, 71, 29, 100, 34], 123)
 
 print(result)
