@@ -6,13 +6,13 @@
 //
 
 //
-// 문자열을 정수로 변환하기
+// 대문자로 바꾸기
 
 import Foundation
 
-func solution(_ n_str:String) -> Int {
-    return Int(n_str)
+func solution(_ myString:String) -> String {
+    return myString.uppercased()
 }
 
-var result = solution("10")!
+var result = solution("aBcDeFg")
 print(result)
