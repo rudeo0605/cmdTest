@@ -6,19 +6,36 @@
 //
 
 //
-// rny_string
-
+// 길이에 따른 연산
 import Foundation
 
-func solution(_ num_list:[Int], _ n:Int) -> [Int] {
+func solution(_ num_list:[Int]) -> Int {
+
+    var result = 0;
+    let size = num_list.count;
+
+    for number in num_list
+    {
+        if(result == 0)
+        {
+            result = number
+        }
+        else
+        {
+            if(size > 10)
+            {
+                result += number
+            }
+            else
+            {
+                result *= number
+            }
+        }
+    }
     
-    let maxIndex = num_list.count - 1
-
-    let result = Array(num_list[n - 1...maxIndex])
-
     return result
 }
 
-var result = solution([5, 2, 1, 7, 5], 2)
+var result = solution([3, 4, 5, 2, 5, 4, 6, 7, 3, 7, 2, 2, 1])
 
 print(result)
