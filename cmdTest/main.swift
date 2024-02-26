@@ -6,24 +6,18 @@
 //
 
 //
-// 암호 해독
+// 뒤에서 5등 위로
 
 import Foundation
 
-func solution(_ cipher:String, _ code:Int) -> String {
+func solution(_ num_list:[Int]) -> [Int] {
     
-    var result = ""
-    for (i,cha) in cipher.enumerated()
-    {
-        if((i+1) % code == 0)
-        {
-            result += String(cha)
-        }
-    }
-    
-    return result
+    var list = num_list
+    list.sort()
+
+    return Array(list[5...])
 }
 
-var result = solution("dfjardstddetckdaccccdegk",4)
+var result = solution([12, 4, 15, 46, 38, 1, 14, 56, 32, 10])
 
 print(result)
