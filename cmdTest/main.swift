@@ -6,27 +6,13 @@
 //
 
 //
-// 문자열의 뒤의 n글자
+// 문자열로 변환
 
 import Foundation
 
-func solution(_ my_string:String, _ n:Int) -> String {
-
-    var result = ""
-
-    let size = my_string.count
-
-    let startIndex = size - n
-
-    for (idx, cha) in my_string.enumerated()
-    {
-        if(startIndex <= idx)
-        {
-            result += String(cha)
-        }
-    }
-    return result
+func solution(_ n:Int) -> String {
+    return String(n)
 }
 
-var result = solution("ProgrammerS123", 11)
+var result = solution(123)
 print(result)
