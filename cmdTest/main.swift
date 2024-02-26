@@ -10,17 +10,21 @@
 
 import Foundation
 
-func solution(_ n:Int, _ numlist:[Int]) -> [Int] {
+func solution(_ rny_string:String) -> String {
 
-    let result: [Int] = numlist.reduce(into:[]) {result, num in 
-        if num % n == 0 {
-            result.append(num)
+    let result : String = rny_string.reduce(into: "") { result, cha in
+        if(cha == "m")
+        {
+            result += "rn"
         }
+        else
+        {
+            result += String(cha)
         }
-
+    }
     return result
 }
 
-var result = solution(3, [4, 5, 6, 7, 8, 9, 10, 11, 12])
+var result = solution("masterpiece")
 
 print(result)
