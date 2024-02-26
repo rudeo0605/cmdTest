@@ -6,22 +6,25 @@
 //
 
 //
-// 9로 나눈 나머지
+// 배열 만들기 5
 import Foundation
 
-func solution(_ number:String) -> Int {
+func solution(_ intStrs:[String], _ k:Int, _ s:Int, _ l:Int) -> [Int] {
     
-    var result = 0
-    for cha in number
-    {
+    let result : [Int] = intStrs.reduce(into:[]) { result, number in
+        let start = number.index(number.startIndex, offsetBy: s)
+        let end = number.index(start, offsetBy: l)
+        let subString = number[start..<end]
         
-        result += Int(String(cha))!
+        let num = Int(subString)!
+        if (num > k)
+        {
+            result.append(num)
+        }
     }
-    
-    return result % 9
+    return result
 }
 
-
-var result = solution("78720646226947352489")
+var result = solution(["0123456789","9876543210","9999999999999"],50000 ,5 ,5)
 
 print(result)
