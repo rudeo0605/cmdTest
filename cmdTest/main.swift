@@ -6,22 +6,21 @@
 //
 
 //
-// 삼각형의 완성조건 (1)
+// 짝수는 싫어요
 
 
 import Foundation
 
-func solution(_ sides:[Int]) -> Int {
+func solution(_ n:Int) -> [Int] {
 
-    var sortSides = sides
-    sortSides.sort(by: >)
-
-    let max = sortSides[0]
-    let sum = sortSides[1] + sortSides[2]
-
-    return max < sum ? 1 : 2
+    var result : [Int] = []
+    
+    for idx in 1...n where idx % 2 == 1
+    {
+        result.append(idx)
+    }
+    return result
 }
-
-var result = solution([1, 2, 3])
+var result = solution(15)
 
 print(result)
