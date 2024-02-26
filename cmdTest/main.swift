@@ -6,16 +6,24 @@
 //
 
 //
-// 공백으로 구분하기 1
+// 암호 해독
 
 import Foundation
 
-func solution(_ my_string:String) -> [String] {
+func solution(_ cipher:String, _ code:Int) -> String {
     
-    let result : [String] = my_string.split(separator: " ").map{String($0)}
+    var result = ""
+    for (i,cha) in cipher.enumerated()
+    {
+        if((i+1) % code == 0)
+        {
+            result += String(cha)
+        }
+    }
+    
     return result
 }
 
-var result = solution("i love you")
+var result = solution("dfjardstddetckdaccccdegk",4)
 
 print(result)
