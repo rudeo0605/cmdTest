@@ -6,21 +6,25 @@
 //
 
 //
-// 최댓값 만들기 (1)
+// 배열의 유사도
 //
 
 
 import Foundation
 
-func solution(_ numbers:[Int]) -> Int {
-
-    var sortNumbers = Array(numbers)
-
-    sortNumbers.sort(by: >)
-
-    return sortNumbers[0] * sortNumbers[1]
+func solution(_ s1:[String], _ s2:[String]) -> Int {
+    
+    var result = 0;
+    for cha in s1
+    {
+        if(s2.contains(cha))
+        {
+            result += 1
+        }
+    }
+    
+    return result
 }
-
-var result = solution([1, 2, 3, 4, 5])
+var result = solution(["a", "b", "c"], ["com", "b", "d", "p", "c"])
 
 print(result)
