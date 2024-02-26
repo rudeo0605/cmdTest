@@ -6,19 +6,18 @@
 //
 
 //
-// 문자열안에 문자열
+// 배열 두배 만들기
 //
 
 
 import Foundation
 
-func solution(_ str1:String, _ str2:String) -> Int {
+func solution(_ numbers:[Int]) -> [Int] {
 
-    let isContain = str1.contains(str2)
-
-    return isContain ? 1 : 2
+    let result : [Int] = numbers.reduce(into: []) {result,number in result.append(number * 2)}
+    return result
 }
 
-var result = solution("ab6CDE443fgh22iJKlmn1o"	,"6CD")
+var result = solution([1, 2, 100, -99, 1, 2, 3])
 
 print(result)
