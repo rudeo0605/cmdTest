@@ -6,18 +6,24 @@
 //
 
 //
-// 뒤에서 5등 위로
+// 할 일 목록
 
 import Foundation
 
-func solution(_ num_list:[Int]) -> [Int] {
+func solution(_ todo_list:[String], _ finished:[Bool]) -> [String] {
     
-    var list = num_list
-    list.sort()
-
-    return Array(list[5...])
+    var result : [String] = []
+    
+    for (i, isBool) in finished.enumerated()
+    {
+        if(!isBool)
+        {
+            result.append(todo_list[i])
+        }
+    }
+    
+    return result
 }
-
-var result = solution([12, 4, 15, 46, 38, 1, 14, 56, 32, 10])
+var result = solution(["problemsolving", "practiceguitar", "swim", "studygraph"] ,[true, false,true,false])
 
 print(result)
