@@ -6,17 +6,23 @@
 //
 
 //
-// 원하는 문자열 찾기
+// 배열 만들기 1
 import Foundation
 
-func solution(_ myString:String, _ pat:String) -> Int {
+func solution(_ n:Int, _ k:Int) -> [Int] {
 
-    let all = myString.lowercased()
-    let pa = pat.lowercased()
+    var result: [Int] = []
+    for i in 1...n
+    {
+        if(i % k == 0)
+        {
+            result.append(i)
+        }
+    }
 
-    return all.contains(pa) ? 1 : 0
+    return result
 }
 
-var result = solution("AbCdEfG", "aBc")
+var result = solution(10, 3)
 
 print(result)
