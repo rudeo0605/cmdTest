@@ -6,22 +6,22 @@
 //
 
 //
-// 글자 이어 붙여 문자열 만들기
+// 9로 나눈 나머지
 import Foundation
 
-func solution(_ my_string:String, _ index_list:[Int]) -> String {
+func solution(_ number:String) -> Int {
     
-    let result : String = index_list.reduce(into : "") {result, number in 
-    
-        let index = my_string.index(my_string.startIndex, offsetBy: number)
-        result += String(my_string[index])
+    var result = 0
+    for cha in number
+    {
         
+        result += Int(String(cha))!
     }
-    return result
+    
+    return result % 9
 }
 
 
-
-var result = solution("cvsgiorszzzmrpaqpe", [16, 6, 5, 3, 12, 14, 11, 11, 17, 12, 7])
+var result = solution("78720646226947352489")
 
 print(result)
