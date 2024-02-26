@@ -6,25 +6,20 @@
 //
 
 //
-// 배열의 유사도
-//
+// 세균 증식
 
 
 import Foundation
 
-func solution(_ s1:[String], _ s2:[String]) -> Int {
-    
-    var result = 0;
-    for cha in s1
+func solution(_ n:Int, _ t:Int) -> Int {
+
+    var result = n;
+    for _ in 0..<t
     {
-        if(s2.contains(cha))
-        {
-            result += 1
-        }
+        result *= 2
     }
-    
     return result
 }
-var result = solution(["a", "b", "c"], ["com", "b", "d", "p", "c"])
+var result = solution(2,10)
 
 print(result)
