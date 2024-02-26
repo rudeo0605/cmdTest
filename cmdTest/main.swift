@@ -6,26 +6,36 @@
 //
 
 //
-// 문자 반복 출력하기
+// 옷가게 할인 받기
 
 import Foundation
 
-func solution(_ my_string:String, _ n:Int) -> String {
+func solution(_ price:Int) -> Int {
 
-    var result = ""
+    var result = 0;
 
-    for cha in my_string
+    let dou = Double(price)
+
+    if (price >= 500000)
     {
-        let str = String(cha)
-
-        for _ in 0..<n
-        {
-            result += str
-        }
+        result = Int(dou * 0.80)
     }
+    else if(price >= 300000)
+    {
+        result = Int(dou * 0.90)
+    }
+    else if(price >= 100000)
+    {
+        result = Int(dou * 0.95)
+    }
+    else
+    {
+        result = price
+    }
+
 
     return result
 }
-var result = solution("hello",3)
+var result = solution(150000)
 
 print(result)
