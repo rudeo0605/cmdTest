@@ -6,33 +6,28 @@
 //
 
 //
-// 순서쌍의 개수
-
+// 모음 제거
 
 import Foundation
 
-func solution(_ n:Int) -> Int {
-    var result = 0
-    
-    //제곱근을 넘어가면 J가 I보다 작아지기 시작
-    let sqrtN = Int(Double(n).squareRoot()) // n의 제곱근을 구합니다.
-    print(sqrtN)
-    for i in 1...sqrtN {
-        if n % i == 0 { // i가 n의 약수인 경우
-            let j = n / i
-            print("\(n) / \(i) = \(JobPriority)")
-            if i == j {
-                result += 1 // i와 j가 같으면, 즉 n이 완전제곱수인 경우
-            } else {
-                result += 2 // i와 j가 다른 두 개의 약수를 찾은 경우
-            }
+func solution(_ my_string:String) -> String {
+
+    let list : [Character] = ["a","e","i","o","u"]
+
+    var result = ""
+
+    for cha in my_string
+    {
+        if !list.contains(cha)
+        {
+            result += String(cha)
         }
     }
     return result
 }
 
-var result = solution(20)
-var result1 = solution(100)
+var result = solution("bus")
+var result1 = solution("nice to meet you")
 
 print(result)
 print(result1)
