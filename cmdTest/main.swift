@@ -6,28 +6,26 @@
 //
 
 //
-// 모음 제거
+// 문자 반복 출력하기
 
 import Foundation
 
-func solution(_ my_string:String) -> String {
-
-    let list : [Character] = ["a","e","i","o","u"]
+func solution(_ my_string:String, _ n:Int) -> String {
 
     var result = ""
 
     for cha in my_string
     {
-        if !list.contains(cha)
+        let str = String(cha)
+
+        for _ in 0..<n
         {
-            result += String(cha)
+            result += str
         }
     }
+
     return result
 }
-
-var result = solution("bus")
-var result1 = solution("nice to meet you")
+var result = solution("hello",3)
 
 print(result)
-print(result1)
