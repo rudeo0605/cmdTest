@@ -6,13 +6,28 @@
 //
 
 //
-// 부분 문자열
+// 배열에서 문자열 대소문자 변환하기
 import Foundation
 
-func solution(_ str1:String, _ str2:String) -> Int {
-    return str2.contains(str1) ? 1 : 0
+func solution(_ strArr:[String]) -> [String] {
+
+    var result:[String] = []
+
+    for (idx,str) in strArr.enumerated()
+    {
+        if(idx % 2 == 0)
+        {
+            result.append(str.lowercased())
+        }
+        else
+        {
+            result.append(str.uppercased())
+        }
+    }
+
+    return result
 }
 
-var result = solution("abc", "aabcc")
+var result = solution(["AAA","BBB","CCC","DDD"]	)
 
 print(result)
