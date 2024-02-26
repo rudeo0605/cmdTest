@@ -6,36 +6,13 @@
 //
 
 //
-// 길이에 따른 연산
+// 정수 찾기
 import Foundation
 
-func solution(_ num_list:[Int]) -> Int {
-
-    var result = 0;
-    let size = num_list.count;
-
-    for number in num_list
-    {
-        if(result == 0)
-        {
-            result = number
-        }
-        else
-        {
-            if(size > 10)
-            {
-                result += number
-            }
-            else
-            {
-                result *= number
-            }
-        }
-    }
-    
-    return result
+func solution(_ num_list:[Int], _ n:Int) -> Int {
+    return num_list.contains(n) ? 1 : 0
 }
 
-var result = solution([3, 4, 5, 2, 5, 4, 6, 7, 3, 7, 2, 2, 1])
+var result = solution([1, 2, 3, 4, 5], 3)
 
 print(result)
