@@ -6,29 +6,19 @@
 //
 
 //
-// 특정 문자 제거하기
+// 문자열안에 문자열
 //
 
 
 import Foundation
 
-func solution(_ my_string:String, _ letter:String) -> String {
+func solution(_ str1:String, _ str2:String) -> Int {
 
-    // 실패 1.
-    // 클로저를 통해 string의 char를 순회하는데 순회 마다 letter를 char로 매번 형변환을 해줌.
-    // 여기에서 속도문제 발생
-    //let result = my_string.filter{ $0 != Character(letter) }
+    let isContain = str1.contains(str2)
 
-    // 해결방법.
-    // letter를 한번만 형변환하고 형변환을한 char를 사용
-    let letterChar = Character(letter)
-    let result = my_string.filter { $0 != letterChar }
-
-
-    return result
+    return isContain ? 1 : 2
 }
 
-
-var result = solution("abcdef","f")
+var result = solution("ab6CDE443fgh22iJKlmn1o"	,"6CD")
 
 print(result)
