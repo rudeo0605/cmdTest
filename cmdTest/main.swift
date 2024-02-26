@@ -6,25 +6,21 @@
 //
 
 //
-// 배열 만들기 5
+// 외계행성의 나이
 import Foundation
 
-func solution(_ intStrs:[String], _ k:Int, _ s:Int, _ l:Int) -> [Int] {
+func solution(_ age:Int) -> String {
+    let dic :[Character : String] = ["0":"a", "1":"b", "2":"c", "3":"d", "4":"e", "5":"f", "6":"g", "7":"h", "8":"i", "9":"j"]
     
-    let result : [Int] = intStrs.reduce(into:[]) { result, number in
-        let start = number.index(number.startIndex, offsetBy: s)
-        let end = number.index(start, offsetBy: l)
-        let subString = number[start..<end]
-        
-        let num = Int(subString)!
-        if (num > k)
-        {
-            result.append(num)
-        }
+    var result = ""
+    for (_,num) in String(age).enumerated()
+    {
+        result += dic[num]!
     }
+    
     return result
 }
 
-var result = solution(["0123456789","9876543210","9999999999999"],50000 ,5 ,5)
+var result = solution(23)
 
 print(result)
