@@ -6,24 +6,17 @@
 //
 
 //
-// n보다 커질 때까지 더하기
+// 원하는 문자열 찾기
 import Foundation
 
-func solution(_ numbers:[Int], _ n:Int) -> Int {
+func solution(_ myString:String, _ pat:String) -> Int {
 
-    var result = 0;
+    let all = myString.lowercased()
+    let pa = pat.lowercased()
 
-    for number in numbers
-    {
-        if(result > n)
-        {
-            break;
-        }
-        result += number
-    }
-    return result
+    return all.contains(pa) ? 1 : 0
 }
 
-var result = solution([34, 5, 71, 29, 100, 34], 123)
+var result = solution("AbCdEfG", "aBc")
 
 print(result)
