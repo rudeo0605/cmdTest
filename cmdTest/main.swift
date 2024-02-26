@@ -6,28 +6,33 @@
 //
 
 //
-// 배열에서 문자열 대소문자 변환하기
+// 접두사인지 확인하기
 import Foundation
 
-func solution(_ strArr:[String]) -> [String] {
+func solution(_ my_string:String, _ is_prefix:String) -> Int {
 
-    var result:[String] = []
+    let stringCnt = my_string.count
+    let prefixCnt = is_prefix.count
 
-    for (idx,str) in strArr.enumerated()
+    if(prefixCnt > stringCnt)
     {
-        if(idx % 2 == 0)
+        return 0
+    }
+    else
+    {
+        let index = my_string.index(my_string.startIndex, offsetBy: prefixCnt)
+        let prefix = my_string[..<index] // "Hello"
+        if(prefix == is_prefix)
         {
-            result.append(str.lowercased())
+            return 1
         }
         else
         {
-            result.append(str.uppercased())
+            return 0
         }
     }
-
-    return result
 }
 
-var result = solution(["AAA","BBB","CCC","DDD"]	)
+var result = solution("banana", "ban")
 
 print(result)
