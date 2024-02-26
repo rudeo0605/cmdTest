@@ -6,30 +6,16 @@
 //
 
 //
-// 2의 영역
+// 공백으로 구분하기 1
 
 import Foundation
 
-func solution(_ arr:[Int]) -> [Int] {
+func solution(_ my_string:String) -> [String] {
     
-    let startIndex = arr.firstIndex(of:2)
-    let endIndex = arr.lastIndex(of:2)
-    
-    var result : [Int] = []
-    
-    if(startIndex == nil || endIndex == nil)
-    {
-        result.append(-1)
-        return result
-    }
-    
-    for idx in startIndex!...endIndex!
-    {
-        result.append(arr[idx])
-    }
-    
+    let result : [String] = my_string.split(separator: " ").map{String($0)}
     return result
 }
-var result = solution([1, 1, 1])
+
+var result = solution("i love you")
 
 print(result)
