@@ -6,24 +6,21 @@
 //
 
 //
-// 대문자로 바꾸기
+// n의 배수 고르기
 
 import Foundation
 
-func solution(_ my_string:String, _ n:Int) -> String {
+func solution(_ n:Int, _ numlist:[Int]) -> [Int] {
 
-    var result = ""
-
-    for (idx,cha) in my_string.enumerated()
-    {
-        if(idx < n)
-        {
-            result += String(cha)
+    let result: [Int] = numlist.reduce(into:[]) {result, num in 
+        if num % n == 0 {
+            result.append(num)
         }
-    }
+        }
 
     return result
 }
 
-var result = solution("ProgrammerS123")
+var result = solution(3, [4, 5, 6, 7, 8, 9, 10, 11, 12])
+
 print(result)
