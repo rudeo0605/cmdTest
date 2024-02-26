@@ -6,20 +6,21 @@
 //
 
 //
-// 배열 두배 만들기
+// 최댓값 만들기 (1)
 //
 
 
 import Foundation
 
-func solution(_ numbers:[Int]) -> [Int] {
+func solution(_ numbers:[Int]) -> Int {
 
-    let result : [Int] = numbers.reduce(into: []) {result,number in result.append(number * 2)}
+    var sortNumbers = Array(numbers)
 
-    let resultMap : [Int] = numbers.map{ $0 * 2 }
-    return resultMap
+    sortNumbers.sort(by: >)
+
+    return sortNumbers[0] * sortNumbers[1]
 }
 
-var result = solution([1, 2, 100, -99, 1, 2, 3])
+var result = solution([1, 2, 3, 4, 5])
 
 print(result)
