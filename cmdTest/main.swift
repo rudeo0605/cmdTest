@@ -6,20 +6,25 @@
 //
 
 //
-// 제곱수 판별하기
+// 숨어있는 숫자의 덧셈 (1)
 
 import Foundation
 
-func solution(_ n:Int) -> Int {
+func solution(_ my_string:String) -> Int {
 
-    let sqrtN = Int(Double(n).squareRoot()) 
-
-    let powN = Int(pow(Double(sqrtN), 2))
-
-    return n == powN ? 1 : 2
+    var result = 0;
+    let intLists:[Character] = ["0","1","2","3","4","5","6","7","8","9"]
+    for cha in my_string
+    {
+        if(intLists.contains(cha))
+        {
+            result += Int(String(cha))!
+        }
+    }
+    return result
 }
 
-var result = solution(144)
-var result1 = solution(976)
+var result = solution("aAb1B2cC34oOp")
+var result1 = solution("1a2b3c4d123")
 print(result)
 print(result1)
