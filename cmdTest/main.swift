@@ -6,21 +6,21 @@
 //
 
 //
-// 외계행성의 나이
+// 카운트 다운
+// for-in 문에서 역순으로 카운트를 하고 싶을 경우
+// stride 를 사용한다.
 import Foundation
 
-func solution(_ age:Int) -> String {
-    let dic :[Character : String] = ["0":"a", "1":"b", "2":"c", "3":"d", "4":"e", "5":"f", "6":"g", "7":"h", "8":"i", "9":"j"]
+func solution(_ start:Int, _ end_num:Int) -> [Int] {
+    var result : [Int] = []
     
-    var result = ""
-    for (_,num) in String(age).enumerated()
+    for i in stride(from: start, to: end_num - 1, by: -1)
     {
-        result += dic[num]!
+        result.append(i)
     }
-    
     return result
 }
 
-var result = solution(23)
+var result = solution(10, 3)
 
 print(result)
