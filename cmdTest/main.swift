@@ -15,7 +15,9 @@ import Foundation
 func solution(_ numbers:[Int]) -> [Int] {
 
     let result : [Int] = numbers.reduce(into: []) {result,number in result.append(number * 2)}
-    return result
+
+    let resultMap : [Int] = numbers.map{ $0 * 2 }
+    return resultMap
 }
 
 var result = solution([1, 2, 100, -99, 1, 2, 3])
