@@ -6,33 +6,22 @@
 //
 
 //
-// 접두사인지 확인하기
+// 글자 이어 붙여 문자열 만들기
 import Foundation
 
-func solution(_ my_string:String, _ is_prefix:String) -> Int {
-
-    let stringCnt = my_string.count
-    let prefixCnt = is_prefix.count
-
-    if(prefixCnt > stringCnt)
-    {
-        return 0
+func solution(_ my_string:String, _ index_list:[Int]) -> String {
+    
+    let result : String = index_list.reduce(into : "") {result, number in 
+    
+        let index = my_string.index(my_string.startIndex, offsetBy: number)
+        result += String(my_string[index])
+        
     }
-    else
-    {
-        let index = my_string.index(my_string.startIndex, offsetBy: prefixCnt)
-        let prefix = my_string[..<index] // "Hello"
-        if(prefix == is_prefix)
-        {
-            return 1
-        }
-        else
-        {
-            return 0
-        }
-    }
+    return result
 }
 
-var result = solution("banana", "ban")
+
+
+var result = solution("cvsgiorszzzmrpaqpe", [16, 6, 5, 3, 12, 14, 11, 11, 17, 12, 7])
 
 print(result)
