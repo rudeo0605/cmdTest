@@ -6,13 +6,13 @@
 //
 
 //
-// 문자열로 변환
+// 소문자로 바꾸기
 
 import Foundation
 
-func solution(_ n:Int) -> String {
-    return String(n)
+func solution(_ myString:String) -> String {
+    return myString.lowercased()
 }
 
-var result = solution(123)
+var result = solution("aBcDeFg")
 print(result)
